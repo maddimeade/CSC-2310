@@ -1,0 +1,46 @@
+//IceCreamCone class
+	class IceCreamCone
+	{
+		private IceCream iceCream = new IceCream();
+		private Cone cone = new Cone();
+		
+		//using accessor to get int representation of cone
+		private int coneInt = cone.getCone();
+		private String coneType;
+		
+		private double runningTotal = 0.0;
+		
+		//constructor
+		public IceCreamCone(IceCream iceCream, Cone cone)
+		{
+			this.iceCream = iceCream;
+			this.cone = cone;
+		}
+		
+		public double getPrice(Cone cone, IceCream iceCream)
+		{
+			//calling method to get cone price
+			double conePrice = cone.getPrice(int coneInt);
+			
+			//calling method to get price of scoops and toppings 
+			double iceCreamPrice = iceCream.getPrice(int scoops, Topping topping)
+			
+			double totalPrice = conePrice + iceCreamPrice + 1.99;
+			return totalPrice;
+		}
+		
+		public String fullOrder()
+		{
+			String list = iceCream.returnList;
+					
+			double price = getPrice(cone, iceCream);
+			String priceString = Double.toString(price);
+				
+			//calling method to get cone type string
+			coneType = cone.getTypeOfCone(int coneInt);
+			
+			String finalOrder = ("\nYour order\nCone: " + coneType + list "/nPrice: " + priceString);
+			
+			return finalOrder;
+		}
+	}
